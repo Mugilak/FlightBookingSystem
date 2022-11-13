@@ -7,13 +7,18 @@ public class Bookings {
 	private long pnrNo;
 	private int flightId;
 	private int seatsBooked;
+	private String from, to;
 	private String status;
+	private int amount;
 	private List<Passenger> passenger;
 
-	public Bookings(long pnrNo, int flightId, int seatsBooked, String status) {
+	public Bookings(long pnrNo, int flightId, int seatsBooked, int amount, String from, String to, String status) {
 		this.pnrNo = pnrNo;
 		this.flightId = flightId;
 		this.seatsBooked = seatsBooked;
+		this.amount = amount;
+		this.from = from;
+		this.to = to;
 		this.status = status;
 		this.passenger = new ArrayList<>();
 	}
@@ -56,6 +61,34 @@ public class Bookings {
 
 	public void setPassenger(Passenger passenger) {
 		this.passenger.add(passenger);
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public void setPassenger(List<Passenger> passenger) {
+		this.passenger = passenger;
 	}
 
 }

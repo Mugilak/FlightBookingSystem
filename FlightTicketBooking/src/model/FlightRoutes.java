@@ -1,27 +1,27 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FlightRoutes {
 	private int flightId;
 	private String flightName;
 	private int seats;
-	private int unUsedSeats;
+	private int vacantSeats;
 	private List<String> routes;
 	private int fare;
-	private int departure;
-	private int arrival;
+	private double departure;
+	private double arrival;
 
-	public FlightRoutes(int flightId, String flightName, int seats, int fare, int departure, int arrival,
-			List<String> routes) {
+	public FlightRoutes(int flightId, String flightName, double departure, double arrival, int seats, int fare) {
 		this.flightId = flightId;
 		this.flightName = flightName;
 		this.seats = seats;
-		this.unUsedSeats = seats;
+		this.vacantSeats = seats;
 		this.fare = fare;
 		this.departure = departure;
 		this.arrival = arrival;
-		this.routes = routes;
+		routes = new ArrayList<>();
 	}
 
 	public int getFlightId() {
@@ -40,6 +40,10 @@ public class FlightRoutes {
 		this.routes = routes;
 	}
 
+	public void addRoute(List<String> routes) {
+		this.routes.addAll(routes);
+	}
+
 	public int getFare() {
 		return fare;
 	}
@@ -48,19 +52,19 @@ public class FlightRoutes {
 		this.fare = fare;
 	}
 
-	public int getDeparture() {
+	public double getDeparture() {
 		return departure;
 	}
 
-	public void setDeparture(int departure) {
+	public void setDeparture(double departure) {
 		this.departure = departure;
 	}
 
-	public int getArrival() {
+	public double getArrival() {
 		return arrival;
 	}
 
-	public void setArrival(int arrival) {
+	public void setArrival(double arrival) {
 		this.arrival = arrival;
 	}
 
@@ -80,12 +84,12 @@ public class FlightRoutes {
 		this.seats = seats;
 	}
 
-	public int getUnUsedSeats() {
-		return unUsedSeats;
+	public int getVacantSeats() {
+		return vacantSeats;
 	}
 
-	public void setUnUsedSeats(int unUsedSeats) {
-		this.unUsedSeats = unUsedSeats;
+	public void setVacantSeats(int unUsedSeats) {
+		this.vacantSeats = unUsedSeats;
 	}
 
 }

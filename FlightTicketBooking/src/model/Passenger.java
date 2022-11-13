@@ -5,16 +5,16 @@ import java.util.List;
 public class Passenger {
 	private int passengerId;
 	private String name;
-	private String dateOfBirth;
+	private String age;
 	private String gender;
 	private String status;
 	private int flightId;
 	private List<Bookings> bookings;
 
-	public Passenger(int id, String name, String birthDate, String gender, String status, int flightId) {
+	public Passenger(int id, String name, String age, String gender, String status, int flightId) {
 		this.passengerId = id;
 		this.name = name;
-		this.dateOfBirth = birthDate;
+		this.age = age;
 		this.gender = gender;
 		this.flightId = flightId;
 	}
@@ -35,12 +35,12 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public String getDateOfBirth() {
-		return dateOfBirth;
+	public String getAge() {
+		return age;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setAge(String dateOfBirth) {
+		this.age = dateOfBirth;
 	}
 
 	public String getGender() {

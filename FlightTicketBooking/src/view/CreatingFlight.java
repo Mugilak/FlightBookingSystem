@@ -4,25 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import controller.FlightController;
+import controller.FlightInputController;
 
 public class CreatingFlight {
 	private Scanner input = new Scanner(System.in);
-	private FlightController flightController;
+	private FlightInputController flightController;
 	private String flightId, flightName, departure, arrival, seats, fare, stops;
 	private List<String> routes;
 
 	public CreatingFlight() {
-		flightController = new controller.FlightController();
+		flightController = new controller.FlightInputController();
 		routes = new ArrayList<>();
 	}
 
 	public void createFlight() {
-		if (flightController.isFlightsCreated()) {
-			System.out.println("Flights are ready to travel");
-		} else {
-			createSchedules();
-		}
+		flightController.getFlightsInput();
+	}
+
+	public void createFlight(int i) {
+		createSchedules();
 	}
 
 	private void createSchedules() {
@@ -58,7 +58,7 @@ public class CreatingFlight {
 		}
 	}
 
-	public String check(String word, String regex, String print) {
+	private String check(String word, String regex, String print) {
 		while (!flightController.isValid(word, regex)) {
 			System.out.println(print + "Enter again : ");
 			word = input.nextLine();

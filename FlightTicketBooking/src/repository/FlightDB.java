@@ -9,7 +9,7 @@ import model.Passenger;
 
 public class FlightDB {
 	private static FlightDB flightDB;
-	List<FlightRoutes> routeList;
+	private List<FlightRoutes> routeList;
 	private List<Bookings> bookingList;
 	private List<Passenger> passengerList;
 
@@ -32,6 +32,14 @@ public class FlightDB {
 
 	public void setBookingList(Bookings booking) {
 		this.bookingList.add(booking);
+	}
+
+	public void removeBooking(Bookings booking) {
+		this.bookingList.remove(booking);
+	}
+
+	public void removePassenger(Passenger passenger) {
+		this.passengerList.remove(passenger);
 	}
 
 	public List<Passenger> getPassengerlist() {
